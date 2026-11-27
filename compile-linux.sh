@@ -2,7 +2,7 @@
 set -e
 
 # ==============================================================================
-# OpenLauncher - Interactive Linux
+# SlowClient - Interactive Linux
 # Build packages for Debian (.deb), AppImage, tar.gz, and standalone binary
 # ==============================================================================
 
@@ -26,7 +26,7 @@ NC='\033[0m'
 print_banner() {
     clear
     echo ""
-    echo -e "  ${BRIGHT_CYAN}◆${NC} ${BOLD}OpenLauncher${NC} ${DIM}•${NC} ${BRIGHT_BLUE}Linux (Tauri + Rust)${NC}"
+    echo -e "  ${BRIGHT_CYAN}◆${NC} ${BOLD}SlowClient${NC} ${DIM}•${NC} ${BRIGHT_BLUE}Linux (Tauri + Rust)${NC}"
     echo -e "  ${DIM}───────────────────────────────────────────────────────${NC}"
     echo ""
 }
@@ -124,11 +124,11 @@ package_linux_tauri() {
     if [ "$bundles" = "tar.gz" ]; then
         $PKG_EXEC tauri build --no-bundle
         mkdir -p release
-        tar -czvf release/OpenLauncher.tar.gz -C src-tauri/target/release openlauncher
+        tar -czvf release/SlowClient.tar.gz -C src-tauri/target/release slowclient
     elif [ "$bundles" = "dir" ]; then
         $PKG_EXEC tauri build --no-bundle
         mkdir -p release/linux-unpacked
-        cp src-tauri/target/release/openlauncher release/linux-unpacked/OpenLauncher
+        cp src-tauri/target/release/slowclient release/linux-unpacked/SlowClient
     else
         $PKG_EXEC tauri build --bundles "$bundles"
         mkdir -p release
@@ -153,7 +153,7 @@ show_summary() {
     
     if [ -d "release" ]; then
         echo -e "  ${DIM}Generated packages:${NC}"
-        find release -maxdepth 2 -type f \( -name "*.deb" -o -name "*.tar.gz" -o -name "*.AppImage" -o -name "OpenLauncher" \) -exec ls -lh {} + 2>/dev/null | awk '{print "    " $9 " (" $5 ")"}'
+        find release -maxdepth 2 -type f \( -name "*.deb" -o -name "*.tar.gz" -o -name "*.AppImage" -o -name "SlowClient" \) -exec ls -lh {} + 2>/dev/null | awk '{print "    " $9 " (" $5 ")"}'
     fi
     
     echo ""
@@ -207,7 +207,7 @@ case $target_choice in
         compile_renderer
         package_linux_tauri "deb,appimage"
         # Also build tar.gz
-        tar -czvf release/OpenLauncher.tar.gz -C src-tauri/target/release openlauncher
+        tar -czvf release/SlowClient.tar.gz -C src-tauri/target/release slowclient
         show_summary
         ;;
     5)
