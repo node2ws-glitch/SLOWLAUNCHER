@@ -1,8 +1,8 @@
 [package]
-name = "openlauncher"
+name = "slowclient"
 version = "1.2.0"
-description = "OpenLauncher is an open source Minecraft launcher"
-authors = ["CesarGarza55"]
+description = "SlowClient is an open source Minecraft launcher"
+authors = ["LightingPlays"]
 license = "GPL-2.0"
 edition = "2024"
 rust-version = "1.90"

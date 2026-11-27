@@ -1,17 +1,17 @@
-; OpenLauncher Windows Installer (NSIS)
+; SlowClient Windows Installer (NSIS)
 ; Input:  ..\release\win-unpacked
-; Output: ..\release\OpenLauncher.exe
+; Output: ..\release\SlowClient.exe
 
 SetCompressor /SOLID lzma
-Name "OpenLauncher"
+Name "SlowClient"
 
-!define APPNAME "OpenLauncher"
-!define APP_EXE "OpenLauncher.exe"
+!define APPNAME "SlowClient"
+!define APP_EXE "SlowClient.exe"
 !define FILE_DIR "..\release\win-unpacked"
-!define OUT_FILE "..\release\OpenLauncher.exe"
-!define DEVELOPER "CesarGarza55"
-!define HELPURL "https://github.com/CesarGarza55/OpenLauncher"
-!define ABOUTURL "https://github.com/CesarGarza55/OpenLauncher"
+!define OUT_FILE "..\release\SlowClient.exe"
+!define DEVELOPER "LightingPlays"
+!define HELPURL "https://github.com/node2ws-glitch/SLOWLAUNCHER"
+!define ABOUTURL "https://github.com/node2ws-glitch/SLOWLAUNCHER"
 
 ; Use custom resources
 !define ICON_FILE "icon.ico"

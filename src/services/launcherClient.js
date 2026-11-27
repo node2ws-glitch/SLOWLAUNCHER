@@ -67,6 +67,23 @@ const tauriLauncher = {
     }
   },
 
+  // SlowClient Skin Library
+  skinsList: () => tauriInvoke('skins_list'),
+  skinsPickAndImport: async () => {
+    const selected = await tauriOpenDialog({
+      title: 'Import Minecraft skin',
+      multiple: false,
+      filters: [{ name: 'Minecraft Skin PNG', extensions: ['png'] }],
+    });
+    if (!selected) return { canceled: true };
+    const sourcePath = typeof selected === 'string' ? selected : selected.path;
+    const skin = await tauriInvoke('skins_import', { sourcePath });
+    return { canceled: false, skin };
+  },
+  skinsImport: (sourcePath) => tauriInvoke('skins_import', { sourcePath }),
+  skinsSetActive: (fileName) => tauriInvoke('skins_set_active', { fileName }),
+  skinsDelete: (fileName) => tauriInvoke('skins_delete', { fileName }),
+
   // Content
   minecraftGetInstalledVersions: () => tauriInvoke('minecraft_get_installed_versions'),
   minecraftGetInstalledMods: (instanceId) => tauriInvoke('minecraft_get_installed_mods', { instanceId: instanceId || null }),
