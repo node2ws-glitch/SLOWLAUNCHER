@@ -40,6 +40,10 @@ export function ProfileModal({ mode = 'new', profile, versions, systemTotalRam: 
   const [ram, setRam] = useState(Math.min(profile?.ram || 4, maxRam));
   const [jvmArguments, setJvmArguments] = useState(profile?.jvmArguments || '');
   const [javaPath, setJavaPath] = useState(profile?.javaPath || '');
+  const [skinLibrary, setSkinLibrary] = useState([]);
+  const [skinName, setSkinName] = useState(profile?.skinName || '');
+  const [skinError, setSkinError] = useState('');
+  const [skinImporting, setSkinImporting] = useState(false);
   const canSave = Boolean(name.trim() && localName.trim());
 
   useEffect(() => {
@@ -50,6 +54,29 @@ export function ProfileModal({ mode = 'new', profile, versions, systemTotalRam: 
     setJvmArguments(profile?.jvmArguments || '');
     setJavaPath(profile?.javaPath || '');
   }, [profile, versions, maxRam]);
+
+  useEffect(() => {
+    setSkinName(profile?.skinName || '');
+    launcher.skinsList?.()
+      .then(items => setSkinLibrary(Array.isArray(items) ? items : []))
+      .catch(error => setSkinError(String(error)));
+  }, [profile]);
+
+  const handleImportSkin = async () => {
+    setSkinError('');
+    setSkinImporting(true);
+    try {
+      const result = await launcher.skinsPickAndImport?.();
+      if (!result || result.canceled) return;
+      const items = await launcher.skinsList();
+      setSkinLibrary(Array.isArray(items) ? items : []);
+      setSkinName(result.skin?.fileName || '');
+    } catch (error) {
+      setSkinError(String(error));
+    } finally {
+      setSkinImporting(false);
+    }
+  };
 
   const rawPresets = [2, 4, 6, 8, 12, 16, 24, 32, 64];
   const presets = rawPresets.filter(amount => amount <= maxRam);
@@ -68,7 +95,7 @@ export function ProfileModal({ mode = 'new', profile, versions, systemTotalRam: 
       id: profile?.id ?? null,
       name: trimmedName,
       localName: trimmedLocalName,
-      skinName: profile?.skinName || '',
+      skinName,
       microsoftAccount: profile?.microsoftAccount || '',
       version: version || null,
       ram,
@@ -113,6 +140,25 @@ export function ProfileModal({ mode = 'new', profile, versions, systemTotalRam: 
             onChange={e => setLocalName(e.target.value)}
             placeholder={t('profile.localAccountPlaceholder')}
           />
+        </div>
+
+        <div className="modal-field">
+          <label className="modal-label">Custom Minecraft Skin</label>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <select className="modal-select" value={skinName} onChange={e => setSkinName(e.target.value)} style={{ flex: 1 }}>
+              <option value="">Use account / default skin</option>
+              {skinLibrary.map(skin => (
+                <option key={skin.id} value={skin.fileName}>{skin.fileName}</option>
+              ))}
+            </select>
+            <button type="button" className="btn btn-secondary" onClick={handleImportSkin} disabled={skinImporting}>
+              {skinImporting ? 'Importing…' : 'Import PNG'}
+            </button>
+          </div>
+          <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 5 }}>
+            PNG only · 64×64 or legacy 64×32. Imported skins are saved in your SlowClient library.
+          </div>
+          {skinError ? <div style={{ fontSize: 11, color: 'var(--danger, #ef4444)', marginTop: 5 }}>{skinError}</div> : null}
         </div>
 
         <div className="modal-field">
