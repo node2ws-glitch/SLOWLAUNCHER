@@ -43,7 +43,7 @@ Pre-built binaries are available in the **[Releases](https://github.com/node2ws-
 >   chmod +x SlowClient.AppImage
 >   ./SlowClient.AppImage
 >   ```
-> - **Tarball (.tar.gz):** Extract and execute `./openlauncher`. Ensure your distribution has `webkit2gtk-4.1` installed (`sudo apt install libwebkit2gtk-4.1-0` on Ubuntu/Debian, `sudo dnf install webkit2gtk4.1` on Fedora, `sudo pacman -S webkit2gtk-4.1` on Arch).
+> - **Tarball (.tar.gz):** Extract and execute `./slowclient`. Ensure your distribution has `webkit2gtk-4.1` installed (`sudo apt install libwebkit2gtk-4.1-0` on Ubuntu/Debian, `sudo dnf install webkit2gtk4.1` on Fedora, `sudo pacman -S webkit2gtk-4.1` on Arch).
 
 <details>
 <summary><b>Legacy Python Version (Beta-1.7.4)</b></summary>
@@ -256,10 +256,10 @@ This project is licensed under the **[GPL-2.0 License](https://github.com/node2w
 
 ## Credits & Acknowledgements
 
-SlowClient is developed and maintained by **[Cesar Garza](https://github.com/CesarGarza55)** with modern AI-assisted engineering workflows for rapid feature iteration and code quality. Built upon [Tauri](https://tauri.app/), [Rust](https://www.rust-lang.org/), [React](https://react.dev/), [Vite](https://vitejs.dev/), [pnpm](https://pnpm.io/), and [Modrinth API](https://docs.modrinth.com/).
+SlowClient is a community fork of [OpenLauncher](https://github.com/CesarGarza55/OpenLauncher), originally created by **[Cesar Garza](https://github.com/CesarGarza55)**. SlowClient is rebranded and maintained by **LightingPlays**. Original project credits and the GPL-2.0 license are preserved. Built upon [Tauri](https://tauri.app/), [Rust](https://www.rust-lang.org/), [React](https://react.dev/), [Vite](https://vitejs.dev/), [pnpm](https://pnpm.io/), and [Modrinth API](https://docs.modrinth.com/).
 
 ---
 
 ## Disclaimer
 
-This project is not affiliated with Mojang AB or Microsoft. Minecraft is a registered trademark of Mojang AB and Microsoft. Review the [Terms and Conditions and Privacy Policy](https://openlauncher.codevbox.com/terms) or contact [support@codevbox.com](mailto:support@codevbox.com).
+This project is not affiliated with Mojang AB or Microsoft. Minecraft is a registered trademark of Mojang AB and Microsoft. For project support, please open an issue in the [SlowClient repository](https://github.com/node2ws-glitch/SLOWLAUNCHER/issues).
