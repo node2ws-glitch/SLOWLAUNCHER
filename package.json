@@ -1,5 +1,5 @@
 {
-  "name": "SlowClient",
+  "name": "slowclient",
   "private": true,
   "version": "1.2.0",
   "description": "SlowClient is a fast, modern, and open-source Minecraft launcher built with React and Tauri with Rust",
