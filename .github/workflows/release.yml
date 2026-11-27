@@ -76,7 +76,7 @@ jobs:
       - name: Prepare unpacked folder
         run: |
           mkdir release\win-unpacked
-          copy src-tauri\target\release\openlauncher.exe release\win-unpacked\OpenLauncher.exe
+          copy src-tauri\target\release\slowclient.exe release\win-unpacked\SlowClient.exe
 
       - name: Install NSIS
         run: choco install nsis -y
@@ -89,7 +89,7 @@ jobs:
 
       - name: Build portable version
         run: |
-          copy src-tauri\target\release\openlauncher.exe release\OpenLauncher-Portable-Windows.exe
+          copy src-tauri\target\release\slowclient.exe release\SlowClient-Portable-Windows.exe
 
       - name: Upload Windows artifacts
         uses: actions/upload-artifact@v4
@@ -135,11 +135,11 @@ jobs:
         run: |
           mkdir -p release
           # Copy .deb
-          cp src-tauri/target/release/bundle/deb/*.deb release/OpenLauncher.deb || true
+          cp src-tauri/target/release/bundle/deb/*.deb release/SlowClient.deb || true
           # Copy .AppImage
-          cp src-tauri/target/release/bundle/appimage/*.AppImage release/OpenLauncher.AppImage || true
+          cp src-tauri/target/release/bundle/appimage/*.AppImage release/SlowClient.AppImage || true
           # Create portable tar.gz
-          tar -czvf release/OpenLauncher.tar.gz -C src-tauri/target/release openlauncher
+          tar -czvf release/SlowClient.tar.gz -C src-tauri/target/release slowclient
 
       - name: Upload Linux artifacts
         uses: actions/upload-artifact@v4
@@ -191,11 +191,11 @@ jobs:
         run: |
           mkdir -p release
           # Copy dmg
-          cp src-tauri/target/${{ matrix.target }}/release/bundle/dmg/*.dmg release/OpenLauncher-mac-${{ matrix.arch }}.dmg || true
+          cp src-tauri/target/${{ matrix.target }}/release/bundle/dmg/*.dmg release/SlowClient-mac-${{ matrix.arch }}.dmg || true
           # Create zip of .app
-          if [ -d "src-tauri/target/${{ matrix.target }}/release/bundle/macos/OpenLauncher.app" ]; then
+          if [ -d "src-tauri/target/${{ matrix.target }}/release/bundle/macos/SlowClient.app" ]; then
             cd "src-tauri/target/${{ matrix.target }}/release/bundle/macos"
-            zip -r "../../../../../release/OpenLauncher-mac-${{ matrix.arch }}.zip" OpenLauncher.app
+            zip -r "../../../../../release/SlowClient-mac-${{ matrix.arch }}.zip" SlowClient.app
             cd -
           fi
 
