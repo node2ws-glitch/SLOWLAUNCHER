@@ -1,54 +1,54 @@
 <p align="center">
-  <img width="96px" src="public/icon.webp" alt="OpenLauncher" />
-  <h1 align="center">OpenLauncher</h1>
+  <img width="96px" src="public/icon.webp" alt="SlowClient" />
+  <h1 align="center">SlowClient</h1>
   <p align="center">
     A fast, modern, and open-source Minecraft launcher built with <b>React</b> and <b>Tauri 2</b> for <b>Windows</b>, <b>macOS</b>, and <b>Linux</b>.
   </p>
 </p>
 
 <p align="center">
-  <a href="https://github.com/CesarGarza55/OpenLauncher/releases"><img alt="Latest Release" src="https://img.shields.io/github/v/release/CesarGarza55/OpenLauncher?style=flat&color=3b82f6" /></a>
+  <a href="https://github.com/node2ws-glitch/SLOWLAUNCHER/releases"><img alt="Latest Release" src="https://img.shields.io/github/v/release/node2ws-glitch/SLOWLAUNCHER?style=flat&color=3b82f6" /></a>
   <img alt="License" src="https://img.shields.io/badge/License-GPL--2.0-blue.svg?style=flat" />
   <img alt="Tauri 2" src="https://img.shields.io/badge/Tauri-2-FFC131?style=flat&logo=tauri&logoColor=white" />
   <img alt="React" src="https://img.shields.io/badge/React-19+-61DAFB?style=flat&logo=react&logoColor=black" />
   <img alt="Vite" src="https://img.shields.io/badge/Vite-6+-646CFF?style=flat&logo=vite&logoColor=white" />
   <img alt="Platforms" src="https://img.shields.io/badge/Platforms-Windows%20%7C%20macOS%20%7C%20Linux-22c55e?style=flat" />
-  <a href="https://github.com/CesarGarza55/OpenLauncher/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/CesarGarza55/OpenLauncher?style=flat&color=eab308" /></a>
+  <a href="https://github.com/node2ws-glitch/SLOWLAUNCHER/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/node2ws-glitch/SLOWLAUNCHER?style=flat&color=eab308" /></a>
 </p>
 
 ---
 
 ## Downloads
 
-Pre-built binaries are available in the **[Releases](https://github.com/CesarGarza55/OpenLauncher/releases)** section:
+Pre-built binaries are available in the **[Releases](https://github.com/node2ws-glitch/SLOWLAUNCHER/releases)** section:
 
 | Operating System | Installer | Portable | Architecture |
 | :--- | :--- | :--- | :--- |
-| **macOS** | `OpenLauncher-mac-arm64.dmg`<br>`OpenLauncher-mac-x64.dmg` | `OpenLauncher-mac-arm64.zip`<br>`OpenLauncher-mac-x64.zip` | Apple Silicon (M1–M5)<br>Intel (x64) |
-| **Windows** | `OpenLauncher.exe` | `OpenLauncher-Portable-Windows.exe` | x64 |
-| **Linux** | `OpenLauncher.deb`<br>`OpenLauncher.AppImage` | `OpenLauncher.tar.gz` | x64 |
+| **macOS** | `SlowClient-mac-arm64.dmg`<br>`SlowClient-mac-x64.dmg` | `SlowClient-mac-arm64.zip`<br>`SlowClient-mac-x64.zip` | Apple Silicon (M1–M5)<br>Intel (x64) |
+| **Windows** | `SlowClient.exe` | `SlowClient-Portable-Windows.exe` | x64 |
+| **Linux** | `SlowClient.deb`<br>`SlowClient.AppImage` | `SlowClient.tar.gz` | x64 |
 
 > [!TIP]
 > **macOS Installation Note:**
-> macOS automatically places downloaded applications from third-party sources into quarantine if they are not signed with a paid Apple Developer certificate. If macOS shows *"OpenLauncher is damaged and can't be opened"*, open Terminal and run:
+> macOS automatically places downloaded applications from third-party sources into quarantine if they are not signed with a paid Apple Developer certificate. If macOS shows *"SlowClient is damaged and can't be opened"*, open Terminal and run:
 > ```bash
-> sudo xattr -rd com.apple.quarantine /Applications/OpenLauncher.app
+> sudo xattr -rd com.apple.quarantine /Applications/SlowClient.app
 > ```
 
 > [!NOTE]
 > **Linux Installation & Permissions:**
-> - **Debian / Ubuntu (.deb):** `sudo apt install ./OpenLauncher.deb`
+> - **Debian / Ubuntu (.deb):** `sudo apt install ./SlowClient.deb`
 > - **Universal AppImage:** Give execution permission and run:
 >   ```bash
->   chmod +x OpenLauncher.AppImage
->   ./OpenLauncher.AppImage
+>   chmod +x SlowClient.AppImage
+>   ./SlowClient.AppImage
 >   ```
 > - **Tarball (.tar.gz):** Extract and execute `./openlauncher`. Ensure your distribution has `webkit2gtk-4.1` installed (`sudo apt install libwebkit2gtk-4.1-0` on Ubuntu/Debian, `sudo dnf install webkit2gtk4.1` on Fedora, `sudo pacman -S webkit2gtk-4.1` on Arch).
 
 <details>
 <summary><b>Legacy Python Version (Beta-1.7.4)</b></summary>
 
-The previous Python-based version of OpenLauncher (legacy) is still available for download in the [Releases](https://github.com/CesarGarza55/OpenLauncher/releases) section. The last version of the legacy system was **Beta-1.7.4**.
+The previous Python-based version of SlowClient (legacy) is still available for download in the [Releases](https://github.com/node2ws-glitch/SLOWLAUNCHER/releases) section. The last version of the legacy system was **Beta-1.7.4**.
 Version 1.2.0 completes the migration from the Electron desktop shell to Tauri 2 while keeping the React/Vite interface and launcher workflows.
 </details>
 
@@ -88,7 +88,7 @@ Configure game directories, custom Java JREs, auto-updates, JVM arguments, and l
 <img width="1478" height="851" alt="image" src="https://github.com/user-attachments/assets/896a5e22-9184-4d43-b7b3-758b78b5e91c" />
 
 #### Optimized Dynamic JVM Arguments
-OpenLauncher dynamically applies the best Garbage Collector flags based on the detected Java runtime:
+SlowClient dynamically applies the best Garbage Collector flags based on the detected Java runtime:
 
 - **Java 21+ (Modern Minecraft 1.20.5+) — Generational ZGC:**
   ```bash
@@ -102,7 +102,7 @@ OpenLauncher dynamically applies the best Garbage Collector flags based on the d
 #### Microsoft Account Authentication
 Authenticate securely with your official Minecraft-entitled Microsoft account:
 
-1. Open OpenLauncher.
+1. Open SlowClient.
 2. Click on the **Microsoft icon** in the sidebar.
 3. Complete the login in the secure browser prompt.
 
@@ -114,7 +114,7 @@ Browse thousands of mods, shaders, texture packs and data packs check installed 
 <img width="1478" height="851" alt="image" src="https://github.com/user-attachments/assets/749d04a5-89c8-4a4d-8d81-429ef046b3e3" />
 
 #### Mod Incompatibility Auto-Fixer
-When Fabric detects conflicting mods, OpenLauncher parses the diagnostic tree and applies harmonized versions in one action:
+When Fabric detects conflicting mods, SlowClient parses the diagnostic tree and applies harmonized versions in one action:
 
 <img width="1552" height="897" alt="Mod Auto-Fixer" src="https://github.com/user-attachments/assets/3a76a061-743c-4cb0-b00c-aec1b5e64aed" />
 
@@ -146,8 +146,8 @@ Easily transition from a traditional shared `.minecraft` directory to an isolate
 - **Java**: Java JDK 17+ (only needed to play Minecraft, not to build the launcher)
 
 ```bash
-git clone https://github.com/CesarGarza55/OpenLauncher.git
-cd OpenLauncher
+git clone https://github.com/node2ws-glitch/SLOWLAUNCHER.git
+cd SlowClient
 pnpm install
 ```
 
@@ -178,7 +178,7 @@ Execute the Windows interactive batch script:
 ```cmd
 compile-windows.bat
 ```
-Generates `OpenLauncher.exe` (custom NSIS installer via `script/installer.nsi`) and `OpenLauncher-Portable-Windows.exe`. Requires [NSIS](https://nsis.sourceforge.io/Download) (or will fallback to Tauri's bundler).
+Generates `SlowClient.exe` (custom NSIS installer via `script/installer.nsi`) and `SlowClient-Portable-Windows.exe`. Requires [NSIS](https://nsis.sourceforge.io/Download) (or will fallback to Tauri's bundler).
 </details>
 
 <details>
@@ -227,7 +227,7 @@ Interactive options:
 ## Testing & Benchmarks
 
 - **Hardware**: AMD Ryzen 5 5600G (6-core / 12-thread), AMD Radeon RX 580 (8GB VRAM), 32GB DDR4 RAM, Windows 11 Pro x64
-- **Setup**: OpenLauncher 1.2.0, 4GB RAM allocated, Minecraft 1.21.11, Fabric Loader 0.1845, Custom Mods (Distant Horizons, Iris, Sodium, etc.)
+- **Setup**: SlowClient 1.2.0, 4GB RAM allocated, Minecraft 1.21.11, Fabric Loader 0.1845, Custom Mods (Distant Horizons, Iris, Sodium, etc.)
 - **Shaders**: [MakeUp-UltraFast-9.5e](https://modrinth.com/shader/makeup-ultra-fast-shaders)
 
 <img width="1425" height="901" alt="image" src="https://github.com/user-attachments/assets/2a24a96d-055e-4a53-85bb-8ea3fbfed841" />
@@ -236,7 +236,7 @@ Interactive options:
 
 ## Tauri Architecture & Performance
 
-OpenLauncher 1.2.0 migrates the desktop runtime from Electron to **Tauri 2 + Rust**. React 19 and Vite continue to render the user interface, while high-performance Rust services in `src-tauri` handle game management, networking, and system operations.
+SlowClient 1.2.0 migrates the desktop runtime from Electron to **Tauri 2 + Rust**. React 19 and Vite continue to render the user interface, while high-performance Rust services in `src-tauri` handle game management, networking, and system operations.
 
 ### Key Performance Advantages:
 - **Ultra-Lightweight Footprint:** By leveraging native system webviews (WebKit on macOS, WebKitGTK on Linux, and WebView2 on Windows) instead of bundling a full Chromium browser, the installer size drops from **~150 MB to ~15 MB**, and baseline idle RAM drops from **~220 MB down to ~35 MB**.
@@ -250,13 +250,13 @@ OpenLauncher 1.2.0 migrates the desktop runtime from Electron to **Tauri 2 + Rus
 ## Contributing & License
 
 Contributions are welcome! Please open issues or submit pull requests following standard GitHub workflows.
-This project is licensed under the **[GPL-2.0 License](https://github.com/CesarGarza55/OpenLauncher/blob/main/LICENSE)**.
+This project is licensed under the **[GPL-2.0 License](https://github.com/node2ws-glitch/SLOWLAUNCHER/blob/main/LICENSE)**.
 
 ---
 
 ## Credits & Acknowledgements
 
-OpenLauncher is developed and maintained by **[Cesar Garza](https://github.com/CesarGarza55)** with modern AI-assisted engineering workflows for rapid feature iteration and code quality. Built upon [Tauri](https://tauri.app/), [Rust](https://www.rust-lang.org/), [React](https://react.dev/), [Vite](https://vitejs.dev/), [pnpm](https://pnpm.io/), and [Modrinth API](https://docs.modrinth.com/).
+SlowClient is developed and maintained by **[Cesar Garza](https://github.com/CesarGarza55)** with modern AI-assisted engineering workflows for rapid feature iteration and code quality. Built upon [Tauri](https://tauri.app/), [Rust](https://www.rust-lang.org/), [React](https://react.dev/), [Vite](https://vitejs.dev/), [pnpm](https://pnpm.io/), and [Modrinth API](https://docs.modrinth.com/).
 
 ---
 
