@@ -471,6 +471,30 @@ pub async fn minecraft_stop(pid: Option<u32>, state: tauri::State<'_, Arc<AppSta
     Ok(())
 }
 
+
+ 
+// ── SlowClient Skin Library ──
+
+#[tauri::command]
+pub fn skins_list() -> Result<Vec<crate::skins::SkinInfo>, String> {
+    crate::skins::list_skins()
+}
+
+#[tauri::command]
+pub fn skins_import(source_path: String) -> Result<crate::skins::SkinInfo, String> {
+    crate::skins::import_skin(&source_path)
+}
+
+#[tauri::command]
+pub fn skins_set_active(file_name: String) -> Result<(), String> {
+    crate::skins::set_active_skin(&file_name)
+}
+
+#[tauri::command]
+pub fn skins_delete(file_name: String) -> Result<(), String> {
+    crate::skins::delete_skin(&file_name)
+}
+
 // ── Updater ──
 
 #[tauri::command]
