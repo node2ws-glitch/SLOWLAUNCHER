@@ -2,6 +2,7 @@ pub mod commands;
 pub mod paths;
 pub mod services;
 pub mod state;
+pub mod skins;
 
 use state::AppState;
 use std::sync::Arc;
@@ -93,6 +94,12 @@ pub fn run() {
             commands::minecraft_install_cancel,
             commands::minecraft_run,
             commands::minecraft_stop,
+
+            // Skin library
+            commands::skins_list,
+            commands::skins_import,
+            commands::skins_set_active,
+            commands::skins_delete,
 
             // Updater
             commands::minecraft_check_update,
