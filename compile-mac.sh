@@ -2,7 +2,7 @@
 set -e
 
 # ==============================================================================
-# OpenLauncher - Interactive macOS
+# SlowClient - Interactive macOS
 # High-performance builder for macOS distributions (DMG, ZIP, Universal)
 # ==============================================================================
 
@@ -27,7 +27,7 @@ NC='\033[0m'
 print_banner() {
     clear
     echo ""
-    echo -e "  ${BRIGHT_CYAN}◆${NC} ${BOLD}OpenLauncher${NC} ${DIM}•${NC} ${BRIGHT_BLUE}macOS (Tauri + Rust)${NC}"
+    echo -e "  ${BRIGHT_CYAN}◆${NC} ${BOLD}SlowClient${NC} ${DIM}•${NC} ${BRIGHT_BLUE}macOS (Tauri + Rust)${NC}"
     echo -e "  ${DIM}───────────────────────────────────────────────────────${NC}"
     echo ""
 }
@@ -158,23 +158,23 @@ package_mac_tauri() {
         find src-tauri/target -name "*.dmg" -exec cp -f {} release/ \; 2>/dev/null || true
     elif [ "$format" = "zip" ]; then
         $PKG_EXEC tauri build $target_flag
-        # Find OpenLauncher.app and zip it
-        APP_PATH=$(find src-tauri/target -type d -name "OpenLauncher.app" 2>/dev/null | head -n 1)
+        # Find SlowClient.app and zip it
+        APP_PATH=$(find src-tauri/target -type d -name "SlowClient.app" 2>/dev/null | head -n 1)
         if [ -n "$APP_PATH" ]; then
             APP_DIR=$(dirname "$APP_PATH")
-            (cd "$APP_DIR" && zip -r "../../../../release/OpenLauncher-mac-${arch}.zip" OpenLauncher.app)
+            (cd "$APP_DIR" && zip -r "../../../../release/SlowClient-mac-${arch}.zip" SlowClient.app)
         fi
     elif [ "$format" = "all" ]; then
         $PKG_EXEC tauri build $target_flag --bundles dmg
         find src-tauri/target -name "*.dmg" -exec cp -f {} release/ \; 2>/dev/null || true
-        APP_PATH=$(find src-tauri/target -type d -name "OpenLauncher.app" 2>/dev/null | head -n 1)
+        APP_PATH=$(find src-tauri/target -type d -name "SlowClient.app" 2>/dev/null | head -n 1)
         if [ -n "$APP_PATH" ]; then
             APP_DIR=$(dirname "$APP_PATH")
-            (cd "$APP_DIR" && zip -r "../../../../release/OpenLauncher-mac-${arch}.zip" OpenLauncher.app)
+            (cd "$APP_DIR" && zip -r "../../../../release/SlowClient-mac-${arch}.zip" SlowClient.app)
         fi
     elif [ "$format" = "dir" ]; then
         $PKG_EXEC tauri build $target_flag
-        APP_PATH=$(find src-tauri/target -type d -name "OpenLauncher.app" 2>/dev/null | head -n 1)
+        APP_PATH=$(find src-tauri/target -type d -name "SlowClient.app" 2>/dev/null | head -n 1)
         if [ -n "$APP_PATH" ]; then
             cp -R "$APP_PATH" release/
         fi
