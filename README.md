@@ -146,7 +146,7 @@ Easily transition from a traditional shared `.minecraft` directory to an isolate
 - **Java**: Java JDK 17+ (only needed to play Minecraft, not to build the launcher)
 
 ```bash
-git clone https://github.com/node2ws-glitch/SLOWLAUNCHER.git
+git clone https://github.com/node2ws-glitch/SLOWLAUNCHER.git SlowClient
 cd SlowClient
 pnpm install
 ```
