@@ -16,12 +16,12 @@
   --bg-backdrop: rgba(3, 5, 8, 0.78);
 
   /* Emerald craft accents */
-  --accent: #10b981;
-  --accent-hover: #059669;
-  --accent-bright: #34d399;
-  --accent-glow: rgba(16, 185, 129, 0.28);
-  --accent-subtle: rgba(16, 185, 129, 0.12);
-  --accent-border: rgba(16, 185, 129, 0.4);
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-bright: #facc15;
+  --accent-glow: rgba(37, 99, 235, 0.28);
+  --accent-subtle: rgba(37, 99, 235, 0.12);
+  --accent-border: rgba(37, 99, 235, 0.4);
 
   /* Status and auxiliary accents */
   --danger: #f43f5e;
@@ -59,7 +59,7 @@
 
   --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.3);
   --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  --shadow-glow: 0 0 24px rgba(16, 185, 129, 0.32);
+  --shadow-glow: 0 0 24px rgba(37, 99, 235, 0.32);
   --shadow-modal: 0 24px 60px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 
   /* Radii */
@@ -96,7 +96,7 @@
   flex-direction: column;
   background-color: var(--bg-void);
   background-image:
-    radial-gradient(ellipse 65% 45% at 85% -5%, rgba(16, 185, 129, 0.07), transparent 60%),
+    radial-gradient(ellipse 65% 45% at 85% -5%, rgba(37, 99, 235, 0.07), transparent 60%),
     radial-gradient(ellipse 55% 40% at 15% 105%, rgba(56, 189, 248, 0.05), transparent 55%),
     linear-gradient(180deg, #07090e 0%, #090d14 40%, #06080c 100%);
   color: var(--text-primary);
@@ -165,7 +165,7 @@ select option {
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.3));
+  filter: drop-shadow(0 2px 4px rgba(37, 99, 235, 0.3));
 }
 
 .titlebar-name {
@@ -285,9 +285,9 @@ select option {
 }
 
 .profile-card.active {
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   border-color: var(--accent-border);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(16, 185, 129, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(37, 99, 235, 0.2);
 }
 
 .profile-avatar {
@@ -361,7 +361,7 @@ select option {
 .profile-chip.version {
   color: var(--accent-bright);
   background: var(--accent-subtle);
-  border-color: rgba(16, 185, 129, 0.2);
+  border-color: rgba(37, 99, 235, 0.2);
 }
 
 .profile-actions {
@@ -416,7 +416,7 @@ select option {
 }
 
 .add-profile-btn:hover {
-  background: rgba(16, 185, 129, 0.08);
+  background: rgba(37, 99, 235, 0.08);
   border-color: var(--accent-border);
   color: var(--accent-bright);
   transform: translateY(-1px);
@@ -453,7 +453,7 @@ select option {
 }
 
 .nav-item.active {
-  background: rgba(16, 185, 129, 0.12);
+  background: rgba(37, 99, 235, 0.12);
   color: var(--accent-bright);
   font-weight: 600;
 }
@@ -483,7 +483,7 @@ select option {
 }
 
 .nav-item.active .nav-counter {
-  background: rgba(16, 185, 129, 0.25);
+  background: rgba(37, 99, 235, 0.25);
   color: var(--accent-bright);
 }
 
@@ -937,7 +937,7 @@ select option {
 .update-banner {
   margin: 12px 18px 0;
   padding: 12px 16px;
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   border: 1px solid var(--accent-border);
   border-radius: var(--radius-md);
   display: flex;
@@ -1103,7 +1103,7 @@ select option {
   width: 56px;
   height: 56px;
   border-radius: var(--radius-lg);
-  background: rgba(16, 185, 129, 0.08);
+  background: rgba(37, 99, 235, 0.08);
   border: 1px solid var(--accent-border);
   display: flex;
   align-items: center;
@@ -1505,7 +1505,7 @@ select option {
 .instance-card.is-active {
   background: rgba(74, 158, 255, 0.08);
   border-color: var(--accent);
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.12);
+  box-shadow: 0 0 16px rgba(37, 99, 235, 0.12);
 }
 
 .instance-card.is-active:hover {
@@ -2695,7 +2695,7 @@ select option {
 .loader-badge.vanilla {
   background: var(--accent-subtle);
   color: var(--accent-bright);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  border: 1px solid rgba(37, 99, 235, 0.25);
 }
 
 .ram-pill {
@@ -2735,12 +2735,12 @@ select option {
   min-width: 170px;
   padding: 0 24px;
   border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
   color: #ffffff;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.35);
   transition: transform var(--duration-fast) var(--ease-spring), box-shadow var(--duration-fast) ease, background var(--duration-normal) ease;
   position: relative;
   overflow: hidden;
@@ -2748,8 +2748,8 @@ select option {
 }
 
 .hero-play-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #34d399 0%, #059669 100%);
-  box-shadow: 0 6px 26px rgba(16, 185, 129, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  background: linear-gradient(135deg, #facc15 0%, #1d4ed8 100%);
+  box-shadow: 0 6px 26px rgba(37, 99, 235, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.45);
   transform: translateY(-1.5px);
 }
 
@@ -4048,9 +4048,9 @@ select option {
 }
 
 .version-type-badge.release {
-  background: rgba(16, 185, 129, 0.15);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(37, 99, 235, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(37, 99, 235, 0.3);
 }
 
 .version-type-badge.beta {
@@ -4389,7 +4389,7 @@ select option {
   font-family: var(--font-mono);
   font-size: 11.5px;
   color: var(--accent-bright);
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   padding: 2px 6px;
   border-radius: var(--radius-xs);
 }
