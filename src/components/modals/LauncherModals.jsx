@@ -514,7 +514,7 @@ export function AboutModal({ appVersion, onClose, onOpenSourceCode, onOpenReleas
           <div className="about-logo-wrapper">
             <img
               src={logoIcon}
-              alt="OpenLauncher"
+              alt="SlowClient"
               className="about-app-logo"
               onError={(e) => { e.currentTarget.style.display = 'none'; }}
             />
