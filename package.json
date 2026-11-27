@@ -1,9 +1,9 @@
 {
-  "name": "OpenLauncher",
+  "name": "SlowClient",
   "private": true,
   "version": "1.2.0",
-  "description": "OpenLauncher is a fast, modern, and open-source Minecraft launcher built with React and Tauri with Rust",
-  "author": "CesarGarza55",
+  "description": "SlowClient is a fast, modern, and open-source Minecraft launcher built with React and Tauri with Rust",
+  "author": "LightingPlays",
   "type": "module",
   "scripts": {
     "dev": "tauri dev",
@@ -15,8 +15,8 @@
     "build:win": "compile-windows.bat",
     "build:linux": "bash compile-linux.sh",
     "build:mac": "bash compile-mac.sh",
-    "build:win:installer": "npx tauri build --no-bundle && node -e \"const fs=require('fs'); fs.mkdirSync('release/win-unpacked', {recursive:true}); fs.copyFileSync('src-tauri/target/release/openlauncher.exe', 'release/win-unpacked/OpenLauncher.exe');\" && cd script && \"C:\\Program Files (x86)\\NSIS\\makensis.exe\" installer.nsi && cd ..",
-    "build:win:portable": "npx tauri build --no-bundle && node -e \"const fs=require('fs'); fs.mkdirSync('release', {recursive:true}); fs.copyFileSync('src-tauri/target/release/openlauncher.exe', 'release/OpenLauncher-Portable-Windows.exe');\""
+    "build:win:installer": "npx tauri build --no-bundle && node -e \"const fs=require('fs'); fs.mkdirSync('release/win-unpacked', {recursive:true}); fs.copyFileSync('src-tauri/target/release/slowclient.exe', 'release/win-unpacked/SlowClient.exe');\" && cd script && \"C:\\Program Files (x86)\\NSIS\\makensis.exe\" installer.nsi && cd ..",
+    "build:win:portable": "npx tauri build --no-bundle && node -e \"const fs=require('fs'); fs.mkdirSync('release', {recursive:true}); fs.copyFileSync('src-tauri/target/release/slowclient.exe', 'release/SlowClient-Portable-Windows.exe');\""
   },
   "dependencies": {
     "@tauri-apps/api": "^2.12.5",
