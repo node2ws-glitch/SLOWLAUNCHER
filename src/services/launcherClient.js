@@ -67,6 +67,12 @@ const tauriLauncher = {
     }
   },
 
+  // SlowClient Skin Library
+  skinsList: () => tauriInvoke('skins_list'),
+  skinsImport: (sourcePath) => tauriInvoke('skins_import', { sourcePath }),
+  skinsSetActive: (fileName) => tauriInvoke('skins_set_active', { fileName }),
+  skinsDelete: (fileName) => tauriInvoke('skins_delete', { fileName }),
+
   // Content
   minecraftGetInstalledVersions: () => tauriInvoke('minecraft_get_installed_versions'),
   minecraftGetInstalledMods: (instanceId) => tauriInvoke('minecraft_get_installed_mods', { instanceId: instanceId || null }),
