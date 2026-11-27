@@ -66,8 +66,8 @@ import {
   cleanMinecraftText,
 } from './utils/formatters';
 
-const APP_SOURCE_URL = 'https://github.com/CesarGarza55/OpenLauncher';
-const APP_RELEASES_URL = 'https://github.com/CesarGarza55/OpenLauncher/releases/latest';
+const APP_SOURCE_URL = 'https://github.com/node2ws-glitch/SLOWLAUNCHER';
+const APP_RELEASES_URL = 'https://github.com/node2ws-glitch/SLOWLAUNCHER/releases/latest';
 
 const minecraftLoginWithAbort = async (profileKey, abortSignal) => {
   if (typeof window !== 'undefined' && window.launcher?.minecraftLogin) {
