@@ -2,13 +2,13 @@
 setlocal EnableDelayedExpansion
 
 REM ==============================================================================
-REM OpenLauncher - Interactive Windows
+REM SlowClient - Interactive Windows
 REM High-performance builder for Windows distributions (NSIS, Portable, Directory)
 REM ==============================================================================
 
 cls
 echo.
-echo   OpenLauncher - Windows
+echo   SlowClient - Windows
 echo  -------------------------------------------------------------
 echo.
 
@@ -42,7 +42,7 @@ if "%build_choice%"=="" set "build_choice=1"
 
 cls
 echo.
-echo   OpenLauncher - Windows
+echo   SlowClient - Windows
 echo  -------------------------------------------------------------
 echo   [1/4] Cleaning previous builds...
 echo.
@@ -57,7 +57,7 @@ echo   [OK] Clean completed.
 
 cls
 echo.
-echo   OpenLauncher - Windows
+echo   SlowClient - Windows
 echo  -------------------------------------------------------------
 echo   [2/4] Compiling Frontend (Vite + React 19)...
 echo.
@@ -71,7 +71,7 @@ echo   [OK] Frontend compiled into dist\
 if "%build_choice%"=="5" (
     cls
     echo.
-    echo   OpenLauncher - Windows
+    echo   SlowClient - Windows
     echo  -------------------------------------------------------------
     echo   [OK] Frontend compilation complete!
     echo.
@@ -80,7 +80,7 @@ if "%build_choice%"=="5" (
 
 cls
 echo.
-echo   OpenLauncher - Windows
+echo   SlowClient - Windows
 echo  -------------------------------------------------------------
 echo   [3/4] Compiling Tauri Application (Release mode)...
 echo.
@@ -91,14 +91,14 @@ if errorlevel 1 (
 )
 
 if not exist "release\win-unpacked" mkdir "release\win-unpacked"
-copy /y "src-tauri\target\release\openlauncher.exe" "release\win-unpacked\OpenLauncher.exe" >nul
+copy /y "src-tauri\target\release\slowclient.exe" "release\win-unpacked\SlowClient.exe" >nul
 
 if "%build_choice%"=="4" (
     goto summary
 )
 
 if "%build_choice%"=="2" (
-    copy /y "src-tauri\target\release\openlauncher.exe" "release\OpenLauncher-Portable-Windows.exe" >nul
+    copy /y "src-tauri\target\release\slowclient.exe" "release\SlowClient-Portable-Windows.exe" >nul
     goto summary
 )
 
@@ -126,17 +126,17 @@ if not "%MAKENSIS_PATH%"=="" (
 if "%build_choice%"=="1" (
     cls
     echo.
-    echo   OpenLauncher - Windows
+    echo   SlowClient - Windows
     echo  -------------------------------------------------------------
     echo   [4/4] Building portable executable...
     echo.
-    copy /y "src-tauri\target\release\openlauncher.exe" "release\OpenLauncher-Portable-Windows.exe" >nul
+    copy /y "src-tauri\target\release\slowclient.exe" "release\SlowClient-Portable-Windows.exe" >nul
 )
 
 :summary
 cls
 echo.
-echo   OpenLauncher - Windows
+echo   SlowClient - Windows
 echo  -------------------------------------------------------------
 echo   [OK] Build completed successfully!
 echo.
